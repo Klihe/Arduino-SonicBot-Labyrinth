@@ -1,10 +1,12 @@
 #include <Arduino.h>
 #include <Ultrasonic.h>
 #include <Config.h>
+#include <Robot.h>
 
 Ultrasonic ultrasonic1(TRIGGER_1, ECHO_1);
 Ultrasonic ultrasonic2(TRIGGER_2 ,ECHO_2);
 Ultrasonic ultrasonic3(TRIGGER_3, ECHO_3);
+Robot robot;
 
 void setup() {
   Serial.begin(9600);
@@ -15,33 +17,22 @@ void setup() {
 }
 
 void loop() {
-  Serial.print("Sensor 01: ");
-  Serial.print(ultrasonic1.read());
-  Serial.println("cm");
+  // Serial.print("Sensor 01: ");
+  // Serial.print(ultrasonic1.read(CM));
+  // Serial.println("cm");
 
-  Serial.print("Sensor 02: ");
-  Serial.print(ultrasonic2.read(CM));
-  Serial.println("cm");
+  // Serial.print("Sensor 02: ");
+  // Serial.print(ultrasonic2.read(CM));
+  // Serial.println("cm");
 
-  Serial.print("Sensor 03: ");
-  Serial.print(ultrasonic3.read(INC));
-  Serial.println("inc");
+  // Serial.print("Sensor 03: ");
+  // Serial.print(ultrasonic3.read(CM));
+  // Serial.println("cm");
 
-  delay(1000);
-
-  for (int speed = 50; speed < 200; speed++) {
-    digitalWrite(DIRECTION_A, HIGH);
-    digitalWrite(DIRECTION_B, HIGH);
-    analogWrite(MOTOR_A, speed);
-    analogWrite(MOTOR_B, speed);
-    delay(10);
-  }
-  for (int speed = 200; speed > 50; speed--) {
-    digitalWrite(DIRECTION_A, HIGH);
-    digitalWrite(DIRECTION_B, HIGH);
-    analogWrite(MOTOR_A, speed);
-    analogWrite(MOTOR_B, speed);
-    delay(1);
+  // delay(1000);
+  for(int i = 0; i < 4; i++) { 
+    robot.turn(255, 90);
+    robot.straight(255, 1000);
   }
   delay(1000);
 }
