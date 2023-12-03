@@ -2,7 +2,10 @@
 #include <Config.h>
 
 #ifndef ROBOT_H 
-#define ROBOT_H 
+#define ROBOT_H
+
+using namespace MotorPins;
+using namespace SonicPins;
 
 class Robot {
 public:

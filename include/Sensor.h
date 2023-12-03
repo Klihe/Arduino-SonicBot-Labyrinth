@@ -24,10 +24,10 @@ public:
     // Compare left and right sides
     void sideWaysSonic(int sonicReadLeft, int sonicReadRight, int distance, Robot &robot) {
         if (sonicReadLeft * 2 < sonicReadRight && sonicReadLeft < distance) {
-            robot.turn(MAX_SPEED, 45);
+            robot.turn(MAX_SPEED, 30);
         }
         else if (sonicReadRight * 2 < sonicReadLeft && sonicReadRight < distance) {
-            robot.turn(MAX_SPEED, -45);
+            robot.turn(MAX_SPEED, -30);
         }
     }
 private:
