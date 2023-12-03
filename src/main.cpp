@@ -19,11 +19,13 @@ void setup() {
 }
 
 void loop() {
+  // Update sonic value
   int sonicReadFront = ultrasonic1.read();
   int sonicReadLeft = ultrasonic2.read();
   int sonicReadRight = ultrasonic3.read();
   delay(100);
 
+  // Check values of sonic
   Serial.print("Sensor 01: ");
   Serial.print(ultrasonic1.read(CM));
   Serial.println("cm");
@@ -36,6 +38,7 @@ void loop() {
   Serial.print(ultrasonic3.read(CM));
   Serial.println("cm");
 
-  sensor.untilSonic(sonicReadFront, sonicReadLeft, sonicReadRight, 20, robot);
+  // Main
+  sensor.untilSonic(sonicReadFront, sonicReadLeft, sonicReadRight, 25, robot);
   sensor.sideWaysSonic(sonicReadLeft, sonicReadRight, 10, robot);
 }
