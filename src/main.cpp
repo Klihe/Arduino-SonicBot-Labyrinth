@@ -4,6 +4,10 @@
 #include <Robot.h>
 #include <Sensor.h>
 
+using namespace MotorPins;
+using namespace SonicPins;
+
+// Ultrasonic and Robot instance
 Ultrasonic ultrasonic1(TRIGGER_FRONT, ECHO_FRONT);
 Ultrasonic ultrasonic2(TRIGGER_LEFT ,ECHO_LEFT);
 Ultrasonic ultrasonic3(TRIGGER_RIGHT, ECHO_RIGHT);
