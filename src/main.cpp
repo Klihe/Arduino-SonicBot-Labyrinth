@@ -45,4 +45,5 @@ void loop() {
   // }
   // delay(100);
   sensor.untilSonic(ultrasonic3, 20, robot);
+  sensor.sideWaysSonic(ultrasonic1, ultrasonic2, 10, robot);
 }
